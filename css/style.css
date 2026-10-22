@@ -393,12 +393,6 @@ main h3 {
       display: none;
    }
 
-   /* White title and hamburger ONLY on the home page (it has the video) */
-   .home h1,
-   .home h1 a,
-   .home .mobile-menu {
-   }
-
    /* floating grid becomes one centered stack */
    main {
       display: flex;
