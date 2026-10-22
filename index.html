@@ -30,7 +30,7 @@
     <!-- header wraps the title, hamburger, and nav -->
     <header>
 
-  <h1><a href="index.html">for &mdash; keeping</a></h1>
+      <h1><a href="index.html">for &mdash; keeping</a></h1>
 
       <!-- hamburger menu should only show up on iPad and mobile -->
       <span class="mobile-menu">&#8801;</span>
@@ -48,6 +48,7 @@
 
     <!-- container for the sketch and frame (desktop and iPad only) -->
     <div class="sketch-frame">
+
       <!-- p5.js sketch -->
       <iframe
         src="https://editor.p5js.org/seumantha/full/aXBNWXtNt"
@@ -58,11 +59,32 @@
       </iframe>
 
       <!-- picture frame overlay -->
-      <img src="img/goldPictureFrame.png" alt="gold frame" class="frame-overlay">
+      <img
+        src="img/frame.png"
+        alt="silver frame"
+        class="frame-overlay"
+      >
+
     </div>
 
-    <!-- single homepage image (mobile only) -->
-    <img src="./img/mobileHomePageImage.jpg" alt="for keeping - home page" class="homepage-img">
+    <!-- framed homepage image (mobile only) -->
+    <div class="mobile-home-frame">
+
+      <!-- homepage image -->
+      <img
+        src="img/mobileHomePageImage.jpg"
+        alt="for keeping - home page"
+        class="homepage-img"
+      >
+
+      <!-- gold frame layered over the homepage image -->
+      <img
+        src="img/frame.png"
+        alt=""
+        class="mobile-frame-overlay"
+      >
+
+    </div>
 
   </body>
 </html>
