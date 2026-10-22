@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- title -->
+    <title>for keeping - connection</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var hamburger = document.querySelector('.mobile-menu');
+        hamburger.addEventListener('click', toggleShow);
+      });
+
+      function toggleShow() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Website title links back to the homepage -->
+      <h1><a href="index.html">for keeping</a></h1>
+
+      <!-- Hamburger menu for tablet/mobile -->
+      <span class="mobile-menu">&#8801;</span>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="1 comfort.html">comfort</a></li>
+          <li><a href="2 wonder.html">wonder</a></li>
+          <li><a href="3 connection.html" class="active">connection</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Connection content goes here -->
+    </main>
+
+  </body>
+</html>

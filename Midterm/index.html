@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- title -->
+    <title>for keeping</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+
+    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var hamburger = document.querySelector('.mobile-menu');
+        hamburger.addEventListener('click', toggleShow);
+
+      });
+
+      function toggleShow() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+      }
+    </script>
+
+
+
+  </head>
+
+  <body>
+
+      <!-- header wraps the title, hamburger, and nav
+   so that they can be positioned together -->
+
+<header>
+
+    <h1>for keeping</h1>
+
+    <!-- hamburger menu shold only
+     show up on iPad and mobile, not
+     on desktop -->
+
+<span class="mobile-menu">&#8801;</span>
+    <nav>
+
+      <!-- id = "menu" so that JS can 
+       find the menu and add/remove the "show" -->
+      <ul id ="menu">
+        <li><a href="1 comfort.html">comfort</a></li>
+        <li><a href="2 wonder.html">wonder</a></li>
+        <li><a href="3 connection.html">connection</a></li>
+      </ul>
+    </nav>
+
+</header>
+
+<!-- container for the sketch and frame -->
+<div class="sketch-frame">
+  <!-- p5.js sketch -->
+<iframe
+   src="https://editor.p5js.org/seumantha/full/aXBNWXtNt"
+   width="1000"
+   height="800"
+   frameborder="0"
+   scrolling="no">
+</iframe>
+
+  <!-- picture frame overlay -->
+  <img src="img/goldPictureFrame.png" alt="" class="frame-overlay">
+</div>
+
+<!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="video/koi.MP4" type="video/mp4">
+</video>
+
+
+
+</body>
+</html>
+

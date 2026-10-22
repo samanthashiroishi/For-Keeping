@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- title -->
+    <title>for keeping - wonder</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- JAVASCRIPT FOR HAMBURGER MENU -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var hamburger = document.querySelector('.mobile-menu');
+        hamburger.addEventListener('click', toggleShow);
+      });
+
+      function toggleShow() {
+        var menu = document.getElementById('menu');
+        menu.classList.toggle('show');
+      }
+    </script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1><a href="index.html">for keeping</a></h1>
+
+      <!-- Hamburger menu for tablet/mobile -->
+      <span class="mobile-menu">&#8801;</span>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="1 comfort.html">comfort</a></li>
+          <li><a href="2 wonder.html" class="active">wonder</a></li>
+          <li><a href="3 connection.html">connection</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Wonder content goes here -->
+
+          <!-- Page heading -->
+    <h3>   . ִ ་ ˖  ʿ  ִֶָ ׄ.𖥔 ݁ ˖ causes of intrigue   . ִ ་ ˖  ʿ  ִֶָ ׄ.𖥔 ݁ ˖ </h3>
+    </main>
+
+  </body>
+</html>
