@@ -380,8 +380,7 @@ main h3 {
       position: relative;
       width: 60%;
       max-width: 420px;
-      margin: 2rem auto;
-   }
+      margin: 7rem auto 2rem;   }
 
    /* Frame determines the container's height and proportions */
    .mobile-frame-overlay {
@@ -408,12 +407,13 @@ main h3 {
 
    nav ul {
       width: 180px;
+      z-index: 100;
    }
 
    /* Keep title and hamburger menu above the video */
    header {
       position: relative;
-      z-index: 2;
+      z-index: 10;
    }
 
    /* Hide the p5.js sketch and picture frame on mobile */
