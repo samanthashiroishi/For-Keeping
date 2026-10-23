@@ -132,6 +132,29 @@ nav a.active {
    display: none;
 }
 
+/* ---------- FRAME CAPTION ---------- */
+.frame-caption {
+   text-align: center;
+   font-family: var(--regfont);
+   font-size: 15px;
+   color: var(--ink);
+   margin: 1rem auto 0;
+}
+
+.frame-caption p {
+   margin: 0;
+}
+
+.frame-caption span {
+   display: block;
+   margin-bottom: 5px;
+}
+
+.frame-caption em {
+   display: block;
+   font-style: italic;
+}
+
 /* Hide the homepage image by default */
 .homepage-img {
    display: none;
