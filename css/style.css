@@ -161,7 +161,7 @@ nav a.active {
 }
 
 
-/* ---------- SHARED PAGE LAYOUT (comfort, wonder, connection) ---------- */
+/* ---------- SHARED PAGE LAYOUT (comfort, wonder, savor) ---------- */
 
 /* main is a 12-column grid. the row-gap controls vertical spacing. */
 main {
@@ -229,7 +229,8 @@ main h3 {
 
 /* ---------- COMFORT PAGE ---------- */
 /* each memory has its own grid row, with spacing controlled by main */
-.fluffys {
+
+.arroyo {
    grid-row: 2;
    grid-column: 2 / span 4;
 }
@@ -244,6 +245,29 @@ main h3 {
    grid-column: 4 / span 4;
 }
 
+
+/* ---------- WONDER PAGE ---------- */
+/* (content styles go here) */
+
+
+/* ---------- SAVOR PAGE ---------- */
+
+.sqirl {
+   grid-row: 2;
+   grid-column: 4 / span 4;
+}
+
+.babyblues {
+   grid-row: 3;
+   grid-column: 5 / span 5;
+}
+
+
+.fluffys {
+   grid-row: 4;
+   grid-column: 2 / span 4;
+}
+
 .fluffys .memory-photos {
    align-items: flex-end;
 }
@@ -256,13 +280,42 @@ main h3 {
    flex: 0 0 57.5%;
 }
 
+.commerceInn {
+   grid-row: 5;
+   grid-column: 7 / span 8;
+}
 
-/* ---------- WONDER PAGE ---------- */
-/* (content styles go here) */
+.lacantine {
+   grid-row: 6;
+   grid-column: 4 / span 4;
+}
+
+.lacantine .memory-photos {
+   display: flex;
+   align-items: flex-start;
+   gap: 6px;
+}
+
+.lacantine .memory-photos img {
+   flex: 0 1 auto;
+   width: auto;
+   height: 220px;
+   max-width: 100%;
+   object-fit: contain;
+}
+
+.gemHome {
+   grid-row: 7;
+   grid-column: 1 / span 5;
+}
 
 
-/* ---------- CONNECTION PAGE ---------- */
-/* (content styles go here) */
+
+
+
+
+
+
 
 
 /* ---------- IPAD / TABLET ---------- */
