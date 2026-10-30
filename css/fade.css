@@ -1,0 +1,24 @@
+/* ---------- SCROLL FADE ANIMATION ---------- */
+
+.memory {
+   opacity: 1;
+}
+
+/* Only hide memories when JavaScript is running */
+.js-fade .memory {
+   opacity: 0;
+   transition: opacity 0.8s ease;
+}
+
+/* Fade in when the memory enters the screen */
+.js-fade .memory.visible {
+   opacity: 1;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+   .js-fade .memory {
+      opacity: 1;
+      transition: none;
+   }
+}

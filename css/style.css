@@ -4,7 +4,7 @@
    --ink: #000000;
    --logoink: #000000;
    --paper: #fff;
-   --accent: #5d5d5d;
+   --accent: #ff51bf;
    --radius: rgb(229, 171, 185);
    --speed: 0.18s;
    --logofont: 'Della Respira', serif;
@@ -44,6 +44,10 @@ h1 {
 h1 a {
    color: var(--ink);
    text-decoration: none;
+}
+
+h1 a:hover {
+   color: var(--accent);
 }
 
 nav {
@@ -155,13 +159,30 @@ nav a.active {
    font-style: italic;
 }
 
+.frame-caption span:hover {
+   color: var(--accent);
+}
+
+.frame-caption em:hover {
+   color: var(--accent);
+}
+
+/* Show desktop/tablet caption by default */
+.frame-caption .desktopTablet {
+   display: block;
+}
+
+.frame-caption .mobile {
+   display: none;
+}
+
 /* Hide the homepage image by default */
 .homepage-img {
    display: none;
 }
 
 
-/* ---------- SHARED PAGE LAYOUT (comfort, wonder, savor) ---------- */
+/* ---------- SHARED PAGE LAYOUT ---------- */
 
 /* main is a 12-column grid. the row-gap controls vertical spacing. */
 main {
@@ -175,18 +196,19 @@ main {
 
 /* page heading spans the full width */
 main h3 {
-   grid-column: 1 / -1;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%;
    text-align: center;
-   font-family: 'Times New Roman', serif;
+   font-family: var(--regfont);
    font-weight: normal;
    color: var(--ink);
-   font-size: 18px;
+   font-size: 15px;
    margin: 1rem 0 0;
-   position: relative;
-   left: -2vw;
 }
 
-/* one memory = a group of photos + a caption, treated as one unit */
+/* a single memory = a group of photos + a caption, treated as one unit */
 .memory {
    margin: 0;
 }
@@ -206,18 +228,20 @@ main h3 {
    width: 100%;
    height: auto;
    display: block;
-
-   /* keeps iPhone HDR photos and videos from glowing brighter than the page */
    dynamic-range-limit: standard;
 }
 
 .memory-caption {
+   width: 100%;
    margin: 12px 0 0;
    font-size: 15px;
    text-align: center;
 }
 
-/* title sits on its own line above the caption description */
+.memory-caption span:hover {
+   color: var(--accent);
+}
+
 .memory-title {
    display: block;
    font-size: inherit;
@@ -226,28 +250,161 @@ main h3 {
    margin-bottom: 4px;
 }
 
+.back-to-top {
+  display: block;
+  width: fit-content;
+  margin: 60px auto 130px;
+  color: #000000;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.back-to-top:hover {
+  opacity: 0.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* ---------- COMFORT PAGE ---------- */
-/* each memory has its own grid row, with spacing controlled by main */
+
+.apartment {
+   grid-row: 2;
+   grid-column: 1 / span 4;
+}
+
+.bkHeights {
+   grid-row: 2;
+   grid-column: 8 / span 3;
+}
+
+.party {
+   grid-row: 3;
+   grid-column: 7 / span 4;
+}
 
 .arroyo {
-   grid-row: 2;
+   grid-row: 4;
    grid-column: 2 / span 4;
 }
 
+.farm {
+   grid-row: 4;
+   grid-column: 9 / span 3;
+}
+
+.redlight {
+   grid-row: 5;
+   grid-column: 6 /span 3;
+}
+
+.pv {
+   grid-row: 6;
+   grid-column: 2 / span 3;
+}
+
 .different-seasons {
-   grid-row: 3;
+   grid-row: 6;
    grid-column: 8 / span 5;
 }
 
+.getty {
+   grid-row: 7;
+   grid-column: 5 / span 4;
+}
+
 .window-dress {
-   grid-row: 4;
-   grid-column: 4 / span 4;
+   grid-row: 8;
+   grid-column: 6 / span 4;
 }
 
 
 /* ---------- WONDER PAGE ---------- */
-/* (content styles go here) */
+
+.nara {
+   grid-row: 2;
+   grid-column: 4 / span 6;
+   justify-self: start;
+   width: max-content;
+   max-width: none;
+}
+
+.nara .memory-photos {
+   display: flex;
+   width: max-content;
+   align-items: flex-start;
+   gap: 6px;
+}
+
+.nara .memory-photos img {
+   flex: 0 0 auto;
+   width: auto;
+   height: 200px;
+   max-width: none;
+}
+
+.nara .memory-caption {
+   width: 1006px;
+   max-width: 100%;
+   min-width: 0;
+   margin: 12px 0 0;
+   overflow-wrap: break-word;
+}
+
+.yoko {
+   grid-row: 3;
+   grid-column: 2 / span 3;
+}
+
+
+.geese {
+   grid-row: 3;
+   grid-column: 8 / span 3;
+}
+
+.stephenson {
+   grid-row: 4;
+   grid-column: 2 / span 4;
+   justify-self: start;
+   display: inline-grid;
+   grid-template-columns: max-content;
+   width: fit-content;
+   max-width: none;
+}
+
+.stephenson .memory-photos {
+   display: flex;
+   width: max-content;
+   grid-column: 1;
+   align-items: flex-start;
+   gap: 6px;
+}
+
+.stephenson .memory-photos img {
+   flex: 0 0 auto;
+   width: auto;
+   height: 220px;
+   max-width: none;
+}
+
+.stephenson .memory-caption {
+   grid-column: 1;
+   width: 792px;
+   max-width: 100%;
+   min-width: 0;
+   margin: 12px 0 0;
+   overflow-wrap: break-word;
+}
+
+.moma {
+   grid-row: 4;
+   grid-column: 9 /span 2;
+}
+
 
 
 /* ---------- SAVOR PAGE ---------- */
@@ -257,15 +414,20 @@ main h3 {
    grid-column: 4 / span 4;
 }
 
+.neighbors {
+   grid-row: 3;
+   grid-column: 1 / span 3;
+}
+
 .babyblues {
    grid-row: 3;
-   grid-column: 5 / span 5;
+   grid-column: 7 / span 5;
 }
 
 
 .fluffys {
    grid-row: 4;
-   grid-column: 2 / span 4;
+   grid-column: 4 / span 4;
 }
 
 .fluffys .memory-photos {
@@ -312,14 +474,10 @@ main h3 {
 
 
 
-
-
-
-
-
+/* ---------- MEDIA QUERIES ---------- */
 
 /* ---------- IPAD / TABLET ---------- */
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 
    header {
       flex-direction: column;
@@ -329,7 +487,7 @@ main h3 {
       padding: 0;
    }
 
-   /* move to keep at top of page */
+   /* Keep the title at the top of the page */
    h1 {
       position: relative;
       top: auto;
@@ -339,7 +497,7 @@ main h3 {
       margin: 1rem 0;
    }
 
-   /* hamburger menu */
+   /* Hamburger menu */
    .mobile-menu {
       display: block;
       font-size: 3rem;
@@ -350,38 +508,30 @@ main h3 {
       cursor: pointer;
    }
 
-   /* navigation is hidden until hamburger is clicked */
+   /* Navigation dropdown */
    nav ul {
       flex-direction: column;
       align-items: flex-start;
-
-      /* position dropdown on the left */
       position: absolute;
       top: 0;
       left: 1rem;
-
-      /* white dropdown box */
       width: 180px;
       background-color: white;
       padding: 0.5rem;
       border-radius: 0;
       z-index: 20;
-
-      /* fade animation */
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
       transition: opacity 0.2s ease, visibility 0.2s ease;
    }
 
-   /* show navigation when hamburger is clicked */
    nav ul.show {
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
    }
 
-   /* style links inside dropdown */
    nav ul li {
       width: 100%;
       text-align: left;
@@ -399,50 +549,149 @@ main h3 {
       width: 100%;
    }
 
-   /* Outer picture frame */
+   /* resize the homepage sketch */
    .sketch-frame {
       width: 600px;
       height: 480px;
-      max-width: 100%;
+      max-width: 90%;
    }
 
-   /* Sketch inside the frame */
    .sketch-frame iframe {
       width: 83%;
       height: 83%;
       top: 44%;
    }
 
-   /* floating layout with less vertical space between memories */
+   /* keep the memories in a grid */
    main {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: 1.5vw;
+      row-gap: 12vh;
       padding: 1rem 4vw 25vh;
-      row-gap: 14vh;
+      align-items: start;
    }
 
+   main h3 {
+      width: calc(100% + 8vw);
+      margin-left: -4vw;
+   }
+
+   /* Let each memory fit inside its grid columns */
+   .memory {
+      min-width: 0;
+      max-width: 100%;
+   }
+
+   /* Keep photos and videos within their memory containers */
    .memory-photos {
+      display: flex;
+      width: 100%;
+      min-width: 0;
       gap: 4px;
+      align-items: flex-start;
    }
 
+   .memory-photos img,
+   .memory-photos video {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 100%;
+      width: 0;
+      height: auto;
+      display: block;
+   }
+
+   /* scale captions with the screen width */
    .memory-caption {
-      font-size: 13px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      font-size: clamp(12px, 1.3vw, 14px);
+      line-height: 1.35;
       margin-top: 10px;
+      overflow-wrap: break-word;
    }
 
    .memory-title {
       font-size: inherit;
    }
 
-   /* slightly wider column spans so the four-photo row doesn't get too tiny */
-   .pos-1 {
-      grid-column: 1 / span 5;
+   /* nara: remove the desktop fixed image height and caption width */
+   .nara {
+      width: 100%;
+      max-width: 100%;
    }
 
-   .pos-2 {
+   .nara .memory-photos {
+      width: 100%;
+      max-width: 100%;
+   }
+
+   .nara .memory-photos img {
+      flex: 1 1 0;
+      width: 0;
+      height: auto;
+      min-width: 0;
+      max-width: 100%;
+   }
+
+   .nara .memory-caption {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+   }
+
+   /* stephenson: remove the desktop fixed image height and caption width */
+   .stephenson {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+   }
+
+   .stephenson .memory-photos {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+   }
+
+   .stephenson .memory-photos img {
+      flex: 1 1 0;
+      width: 0;
+      height: auto;
+      min-width: 0;
+      max-width: 100%;
+   }
+
+   .stephenson .memory-caption {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+   }
+
+   /* Keep the food memory's images and video within its columns */
+   .fluffys .memory-photos img,
+   .fluffys .memory-photos video {
+      flex: 1 1 0;
+      width: 0;
+      min-width: 0;
+      max-width: 100%;
+      height: auto;
+   }
+
+   /* Allow the La Cantine images to scale down */
+   .lacantine .memory-photos img {
+      flex: 1 1 0;
+      width: 0;
+      height: auto;
+      min-width: 0;
+      max-width: 100%;
+   }
+
+   /* Prevent this memory from extending beyond the grid */
+   .commerceInn {
       grid-column: 7 / span 6;
-   }
-
-   .pos-3 {
-      grid-column: 3 / span 5;
    }
 }
 
@@ -450,15 +699,86 @@ main h3 {
 /* ---------- MOBILE ---------- */
 @media screen and (max-width: 767px) {
 
-   /* Container sized according to the frame's original proportions */
+   /* Center the header and title */
+   header {
+      position: relative;
+      z-index: 10;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      text-align: center;
+      padding: 0;
+   }
+
+   h1 {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      text-align: center;
+      margin: 1rem 0;
+   }
+
+   /* Hamburger menu */
+   .mobile-menu {
+      display: block;
+      font-size: 3rem;
+      color: var(--ink);
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      cursor: pointer;
+   }
+
+   /* navigation dropdown */
+   nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      width: 180px;
+      background-color: white;
+      padding: 0.5rem;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+   }
+
+   nav ul.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+   }
+
+   nav ul li {
+      width: 100%;
+      text-align: left;
+   }
+
+   nav ul li a {
+      padding: 0.7rem 1rem;
+   }
+
+   nav {
+      width: 100%;
+   }
+
+   nav li {
+      width: 100%;
+   }
+
+   /* Homepage */
    .mobile-home-frame {
       display: block;
       position: relative;
       width: 60%;
       max-width: 420px;
-      margin: 7rem auto 2rem;   }
+      margin: 7rem auto 2rem;
+   }
 
-   /* Frame determines the container's height and proportions */
    .mobile-frame-overlay {
       display: block;
       position: relative;
@@ -466,10 +786,8 @@ main h3 {
       height: auto;
       z-index: 2;
       pointer-events: none;
-      /* opacity: 40%; */
    }
 
-   /* Image is independently sized and centered behind the frame */
    .homepage-img {
       display: block;
       position: absolute;
@@ -481,52 +799,157 @@ main h3 {
       z-index: 1;
    }
 
-   nav ul {
-      width: 180px;
-      z-index: 100;
+   /* Hide desktop/tablet wording */
+   .frame-caption .desktopTablet {
+      display: none;
    }
 
-   /* Keep title and hamburger menu above the video */
-   header {
-      position: relative;
-      z-index: 10;
+   /* Show mobile wording */
+   .frame-caption .mobile {
+      display: block;
    }
 
-   /* Hide the p5.js sketch and picture frame on mobile */
+   /* Optional: slightly smaller caption on mobile */
+   .frame-caption {
+      font-size: 13px;
+   }
+
    .sketch-frame {
       display: none;
    }
 
-   /* floating grid becomes one centered stack */
+   /* stack every memory in one centered column */
    main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      row-gap: 14vh;
+      gap: 12vh;
       padding: 1rem 0 15vh;
+      width: 100%;
    }
 
    main h3 {
+      position: absolute;
+      top: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
+      margin: 0;
       padding: 0 5vw;
    }
 
-   .memory {
-      width: 85%;
-      max-width: 420px;
-      margin-top: 0;
+   main .memory:first-of-type {
+      margin-top: 8rem;
    }
 
+   /* Each memory is on its own row */
+   .memory {
+      display: block;
+      width: 85%;
+      max-width: 420px;
+      min-width: 0;
+      margin: 0;
+   }
+
+   /* Keep each memory's images and videos together */
+   .memory-photos {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      gap: 4px;
+      align-items: flex-start;
+   }
+
+   .memory-photos img,
+   .memory-photos video {
+      flex: 1 1 0;
+      width: 0;
+      height: auto;
+      min-width: 0;
+      max-width: 100%;
+      display: block;
+   }
+
+   /* Captions scale with the available space */
    .memory-caption {
-      font-size: 14px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      font-size: clamp(13px, 3.5vw, 15px);
+      line-height: 1.4;
+      margin: 10px 0 0;
+      text-align: center;
+      overflow-wrap: break-word;
    }
 
    .memory-title {
       font-size: inherit;
    }
 
-   /* Keep the first memory in its normal mobile position */
-   .pos-1 {
-      transform: none;
+   /* Reset desktop-specific positioning and sizing */
+   .nara,
+   .stephenson {
+      display: block;
+      width: 85%;
+      max-width: 420px;
+      min-width: 0;
    }
+
+   .nara .memory-photos,
+   .stephenson .memory-photos {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+   }
+
+   .nara .memory-photos img,
+   .stephenson .memory-photos img {
+      flex: 1 1 0;
+      width: 0;
+      height: auto;
+      min-width: 0;
+      max-width: 100%;
+   }
+
+   .nara .memory-caption,
+   .stephenson .memory-caption {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+   }
+
+   /* Preserve the image and video proportions in Fluffys */
+   .fluffys .memory-photos {
+      align-items: flex-end;
+   }
+
+   .fluffys .memory-photos img,
+   .fluffys .memory-photos video {
+      flex: 1 1 0;
+      width: 0;
+      min-width: 0;
+      max-width: 100%;
+      height: auto;
+   }
+
+   /* Let La Cantine's images shrink on mobile */
+   .lacantine .memory-photos img {
+      flex: 1 1 0;
+      width: 0;
+      height: auto;
+      min-width: 0;
+      max-width: 100%;
+      object-fit: contain;
+   }
+
+a.back-to-top,
+a.back-to-top:link,
+a.back-to-top:visited,
+a.back-to-top:hover,
+a.back-to-top:active {
+  font-style: normal !important;
+}
+
+
 }
